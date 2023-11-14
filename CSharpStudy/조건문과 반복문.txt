@@ -1,0 +1,20 @@
+[do-while]
+do
+{
+
+} while( );
+처음 한번 무조건 실행해야할때
+
+===============================================================
+[foreach]
+
+string[] inventory = { "검", "방패", "활", "화살", "물약" };
+foreach(string item in inventory)
+{
+	Console.WriteLine(item);
+}
+
+===============================================================
+[Random]
+
+new Random().Next(0, 3); => 0부터 2까지

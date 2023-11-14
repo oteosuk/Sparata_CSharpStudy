@@ -1,4 +1,4 @@
-[다중 출력, 정수변환, 출력양식]
+[다중 입력, 정수변환]
 
 Console.Write("Enter two numbers: ");
 string input = Console.ReadLine();
@@ -8,9 +8,6 @@ int num1 = int.Parse(numbers[0]);     // 첫 번째 값을 정수로 변환하여 저장
 int num2 = int.Parse(numbers[1]);     // 두 번째 값을 정수로 변환하여 저장
 
 int sum = num1 + num2;                // 두 수를 더하여 결과를 계산
-
-Console.WriteLine("The sum of {0} and {1} is {2}.", num1, num2, sum);
-
 ===============================================================
 [var 키워드]
 
@@ -19,40 +16,21 @@ var name = "kero";
 var pi = 3.141592;
 
 ===============================================================
-[문자열 처리]
+[문자열 처리 및 출력양식]
 
 string str1 = "Hello, World!";
 string str2 = new string('h', 5);
 string str3 = str1 + " " + str2;
 string str4 = str1.Split(',');
+
 int index = str1.IndexOf("World"); // World 가 나오는 인덱스 추출
 string newStr = str1.Replace("World", "Universe"); // World 가 나오는 부분 교체
+
 string str5 = "123";
 int num = int.Parse(str5);
 num += 10;
 Console.WriteLine(num.ToString());
+
 Console.WriteLine(string.Compare(str1,str2)); // str1 - str2인 정수값이 나옴, 즉 사전상 순서 비교
 Console.WriteLine("The sum of {0} and {1} is {2}.", num1, num2, sum);
 Console.WriteLine($"The sum of {num1} and {num2} is {sum}.");
-
-===============================================================
-[do-while]
-do
-{
-
-} while( );
-처음 한번 무조건 실행해야할때
-
-===============================================================
-[foreach]
-
-string[] inventory = { "검", "방패", "활", "화살", "물약" };
-foreach(string item in inventory)
-{
-	Console.WriteLine(item);
-}
-
-===============================================================
-[Random]
-
-new Random().Next(0, 3); => 0부터 2까지
