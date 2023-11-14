@@ -1,0 +1,14 @@
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\bin\Debug\net6.0\CSharpStudy.exe
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\bin\Debug\net6.0\CSharpStudy.deps.json
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\bin\Debug\net6.0\CSharpStudy.runtimeconfig.json
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\bin\Debug\net6.0\CSharpStudy.dll
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\bin\Debug\net6.0\CSharpStudy.pdb
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\CSharpStudy.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\CSharpStudy.AssemblyInfoInputs.cache
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\CSharpStudy.AssemblyInfo.cs
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\CSharpStudy.csproj.CoreCompileInputs.cache
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\CSharpStudy.dll
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\refint\CSharpStudy.dll
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\CSharpStudy.pdb
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\CSharpStudy.genruntimeconfig.cache
+C:\Users\user.JY-20191120CDZA\Desktop\C#\ConsoleApp1\obj\Debug\net6.0\ref\CSharpStudy.dll
