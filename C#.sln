@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "C#Practice", "C#Practice\C#Practice.csproj", "{B28C5D40-B6BA-47FF-BA7E-92D190AF0875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStudy", "ConsoleApp1\CSharpStudy.csproj", "{DEB44213-7D31-486C-98A0-D06AA8FD3377}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStudy", "CSharpStudy\CSharpStudy.csproj", "{DEB44213-7D31-486C-98A0-D06AA8FD3377}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
