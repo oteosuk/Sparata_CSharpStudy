@@ -1,0 +1,55 @@
+[Convert]
+
+string iStr = "10";
+int x;
+x = Convert.ToInt32(iStr); // x : 10
+
+string bStr = "true";
+bool b;
+b = Convert.ToBoolean(bStr); // b : true
+
+=======================================
+[Parse]
+
+string iStr = "10";
+int x;
+x = int.Parse(iStr); // x : 10
+
+string bStr = "true";
+bool b;
+b = bool.Parse(bStr); // b : true
+
+=======================================
+[에러 발생]
+
+string iStr = "10xxxx";
+int x;
+x = Convert.ToInt32(iStr); // x : ??? 에러 발생
+
+string bStr = "testtest";
+bool b;
+b = bool.Parse(bStr); // b : ???? 에러 발생
+
+=======================================
+[TryParse() 함수]
+string iStr = "10";
+int x;
+int.TryParse(iStr, out x); // x : 10
+
+string bStr = "true";
+bool b;
+bool.TryParse(bStr, out b); // b : true
+
+기존 방법과 다른 점은 반환값으로 캐스팅한 값을 받지 않습니다.
+반환값은 bool 만 받으며 캐스팅이 성공했는지 알려줍니다.
+
+string iStr = "10"; // int 로 변활 할 수 있으니 성공
+int x;
+bool isSuccess;
+isSuccess = int.TryParse(iStr, out x); // isSuccess : true
+
+
+string bStr = "testtest"; // bool 로 변활 할 수 있으니 실패
+bool b;
+bool isSuccess;
+isSuccess = int.TryParse(bStr, out b); // isSuccess : false

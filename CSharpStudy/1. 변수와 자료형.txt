@@ -1,4 +1,4 @@
-[다중 입력, 정수변환]
+[구분하여 다중 입력]
 
 Console.Write("Enter two numbers: ");
 string input = Console.ReadLine();
@@ -6,8 +6,6 @@ string input = Console.ReadLine();
 string[] numbers = input.Split(' ');  // 문자열을 공백으로 구분하여 배열로 만듦
 int num1 = int.Parse(numbers[0]);     // 첫 번째 값을 정수로 변환하여 저장
 int num2 = int.Parse(numbers[1]);     // 두 번째 값을 정수로 변환하여 저장
-
-int sum = num1 + num2;                // 두 수를 더하여 결과를 계산
 ===============================================================
 [var 키워드]
 
