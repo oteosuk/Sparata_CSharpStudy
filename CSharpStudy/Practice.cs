@@ -1,8 +1,11 @@
 ﻿namespace CSharpStudy
 {
     using static Console;
-    internal class Practice
-    {
-        
+    class Practice
+    { 
+        static void Main(string[] args)
+        {
+            //Console.WriteLine("Hello, World!");
+        }
     }
 }

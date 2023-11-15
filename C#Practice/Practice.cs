@@ -1,6 +1,6 @@
 ﻿namespace C_Practice
 {
-    internal class Test
+    internal class Practice
     {
         static void Main(string[] args)
         {

@@ -1,4 +1,4 @@
-﻿/*namespace TextGame
+﻿namespace TextGame
 {
     public class Character
     {
@@ -108,7 +108,7 @@
 
     }
 
-    internal class TextGame
+    class TextGameMain
     {
         static Character _player;
         static Item[] _items;
@@ -345,4 +345,4 @@
             Console.ReadKey();
         }
     }
-}*/
+}

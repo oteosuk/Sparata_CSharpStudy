@@ -1,8 +1,8 @@
-﻿/*namespace TikTakTo
+﻿namespace TikTakTo
 {
     using static Console;
 
-    internal class TikTakTo
+    class TikTakToMain
     {
         static char[] arr = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         static int player = 1;
@@ -88,4 +88,4 @@
             else return 0;
         }
     }
-}*/
+}
