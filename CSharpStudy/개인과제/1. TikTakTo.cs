@@ -1,4 +1,4 @@
-﻿/*namespace CSharpStudy
+﻿/*namespace TikTakTo
 {
     using static Console;
 

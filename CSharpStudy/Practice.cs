@@ -1,7 +1,7 @@
 ﻿namespace CSharpStudy
 {
     using static Console;
-    internal class Program
+    internal class Practice
     {
         
     }
