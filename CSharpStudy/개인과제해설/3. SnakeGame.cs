@@ -1,4 +1,4 @@
-﻿namespace SnakeGame
+﻿/*namespace SnakeGame
 {
     class SnakeGameMain
     {
@@ -288,4 +288,4 @@
             return new Point(x, y, sym);
         }
     }
-}
+}*/

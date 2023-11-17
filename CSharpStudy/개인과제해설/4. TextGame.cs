@@ -1,4 +1,4 @@
-﻿namespace TextGame
+﻿/*namespace TextGame
 {
     public class Character
     {
@@ -105,7 +105,6 @@
             int padding = totalLength - currentLength;
             return str.PadRight(str.Length + padding);
         }
-
     }
 
     class TextGameMain
@@ -345,4 +344,4 @@
             Console.ReadKey();
         }
     }
-}
+}*/

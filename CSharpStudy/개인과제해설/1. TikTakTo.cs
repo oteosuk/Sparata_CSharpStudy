@@ -1,4 +1,4 @@
-﻿namespace TikTakTo
+﻿/*namespace TikTakTo
 {
     using static Console;
 
@@ -88,4 +88,4 @@
             else return 0;
         }
     }
-}
+}*/
