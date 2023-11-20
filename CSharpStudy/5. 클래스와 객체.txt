@@ -192,3 +192,108 @@ class Person
         Console.WriteLine("Person 객체 소멸");
     }
 }
+
+=========================================================================================================================================
+[05. 프로퍼티 (Property)]
+
+- 1) 프로퍼티란?
+    - 프로퍼티는 클래스 멤버로서, 객체의 필드 값을 읽거나 설정하는데 사용되는 접근자(Accessor) 메서드의 조합입니다.
+    - 객체의 필드에 직접 접근하지 않고, 간접적으로 값을 설정하거나 읽을 수 있도록 합니다.
+    - 필드에 대한 접근 제어와 데이터 유효성 검사 등을 수행할 수 있습니다.
+    - 프로퍼티는 필드와 마찬가지로 객체의 상태를 나타내는 데이터 역할을 하지만, 외부에서 접근할 때 추가적인 로직을 수행할 수 있습니다.
+
+    - 2) 프로퍼티 구문
+    - 프로퍼티는 get과 set 접근자를 사용하여 값을 읽고 설정하는 동작을 정의합니다.
+    - get 접근자는 프로퍼티의 값을 반환하고, set 접근자는 프로퍼티의 값을 설정합니다.
+    - 필요에 따라 get 또는 set 접근자 중 하나를 생략하여 읽기 전용 또는 쓰기 전용 프로퍼티를 정의할 수 있습니다.
+
+[접근 제한자] [데이터 타입] 프로퍼티명
+{
+    get
+    {
+        // 필드를 반환하거나 다른 로직 수행
+    }
+    set
+    {
+        // 필드에 값을 설정하거나 다른 로직 수행
+    }
+}
+
+- 3) 프로퍼티 사용 예시
+    
+    다음은 Player 클래스의 이름과 레벨을 나타내는 name과 level 필드를 캡슐화한 프로퍼티의 예시입니다.
+
+class Person
+{
+    private string name;
+    private int age;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set { age = value; }
+    }
+}
+
+Person person = new Person();
+person.Name = "John";   // Name 프로퍼티에 값 설정
+person.Age = 25;        // Age 프로퍼티에 값 설정
+
+Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");  // Name과 Age 프로
+
+
+4)  프로퍼티 접근 제한자 적용 & 유효성 검사 예제
+class Person
+{
+    private string name;
+    private int age;
+
+    public string Name
+    {
+        get { return name; }
+        private set { name = value; }
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set
+        {
+            if (value >= 0)
+                age = value;
+        }
+    }
+}
+
+Person person = new Person();
+person.Name = "John";     // 컴파일 오류: Name 프로퍼티의 set 접근자는 private입니다.
+person.Age = -10;         // 유효성 검사에 의해 나이 값이 설정되지 않습니다.
+
+Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");  // Name과 Age 프로퍼티에 접근하여 값을 출력합니다.
+
+- 5) 자동 프로퍼티 (Auto Property)
+    - 자동 프로퍼티는 프로퍼티를 간단하게 정의하고 사용할 수 있는 편리한 기능입니다.
+    - 필드의 선언과 접근자 메서드의 구현을 컴파일러가 자동으로 처리하여 개발자가 간단한 구문으로 프로퍼티를 정의할 수 있습니다.
+
+자동 프로퍼티는 다음과 같은 구문을 가집니다.
+[접근 제한자] [데이터 타입] 프로퍼티명 { get; set; }
+
+아래는 자동 프로퍼티를 사용한 예시입니다.
+
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+Person person = new Person();
+person.Name = "John";     // 값을 설정
+person.Age = 25;          // 값을 설정
+
+Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");  // 값을 읽어 출력
