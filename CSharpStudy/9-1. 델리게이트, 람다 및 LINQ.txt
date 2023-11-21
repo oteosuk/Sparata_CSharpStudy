@@ -55,4 +55,218 @@ class Program
         Console.ReadKey();
     }
 }
+### 0**2. 람다 ( L**ambda )
+
+- **1) 람다란?**
+    - 람다(lambda)는 익명 메서드를 만드는 방법입니다.
+    - 람다를 사용하면 메서드의 이름 없이 메서드를 만들 수 있습니다.
+    - 람다는 델리게이트를 사용하여 변수에 할당하거나, 메서드의 매개변수로 전달할 수 있습니다.
+
+    2) 람다 구현
+    (parameter_list) => expression
+
+    정의하기
+    Calculate calc = (x, y) => 
+    {	
+		    return x + y;
+    };
+
+    Calculate calc = (x, y) => x + y;
+
+    3) 사용 예제
+using System;
+
+// 델리게이트 선언
+delegate void MyDelegate(string message);
+
+class Program
+{
+    static void Main()
+    {
+        // 델리게이트 인스턴스 생성 및 람다식 할당
+        MyDelegate myDelegate = (message) =>
+        {
+            Console.WriteLine("람다식을 통해 전달된 메시지: " + message);
+        };
+
+        // 델리게이트 호출
+        myDelegate("안녕하세요!");
+
+        Console.ReadKey();
+    }
+}
+
+
+
+
+게임의 분기 시작을 알리기
+// 델리게이트 선언
+public delegate void GameEvent();
+
+// 이벤트 매니저 클래스
+public class EventManager
+{
+    // 게임 시작 이벤트
+    public event GameEvent OnGameStart;
+
+    // 게임 종료 이벤트
+    public event GameEvent OnGameEnd;
+
+    // 게임 실행
+    public void RunGame()
+    {
+        // 게임 시작 이벤트 호출
+        OnGameStart?.Invoke();
+
+        // 게임 실행 로직
+
+        // 게임 종료 이벤트 호출
+        OnGameEnd?.Invoke();
+    }
+}
+
+// 게임 메시지 클래스
+public class GameMessage
+{
+    public void ShowMessage(string message)
+    {
+        Console.WriteLine(message);
+    }
+}
+
+// 게임 실행
+static void Main()
+{
+    // 이벤트 매니저 객체 생성
+    EventManager eventManager = new EventManager();
+
+    // 게임 메시지 객체 생성
+    GameMessage gameMessage = new GameMessage();
+
+    // 게임 시작 이벤트에 람다 식으로 메시지 출력 동작 등록
+    eventManager.OnGameStart += () => gameMessage.ShowMessage("게임이 시작됩니다.");
+
+    // 게임 종료 이벤트에 람다 식으로 메시지 출력 동작 등록
+    eventManager.OnGameEnd += () => gameMessage.ShowMessage("게임이 종료됩니다.");
+
+    // 게임 실행
+    eventManager.RunGame();
+}
+### 03. Func과 Action
+
+- **1) Func, Action 란?**
+    - **`Func`**과 **`Action`**은 델리게이트를 대체하는 미리 정의된 제네릭 형식입니다.
+    - **`Func`**는 값을 반환하는 메서드를 나타내는 델리게이트입니다. 마지막 제네릭 형식 매개변수는 반환 타입을 나타냅니다. 예를 들어, **`Func<int, string>`**는 **`int`**를 입력으로 받아 **`string`**을 반환하는 메서드를 나타냅니다.
+    - **`Action`**은 값을 반환하지 않는 메서드를 나타내는 델리게이트입니다. **`Action`**은 매개변수를 받아들이지만, 반환 타입이 없습니다. 예를 들어, **`Action<int, string>`**은 **`int`**와 **`string`**을 입력으로 받고, 아무런 값을 반환하지 않는 메서드를 나타냅니다.
+    - **`Func`** 및 **`Action`**은 제네릭 형식으로 미리 정의되어 있어 매개변수와 반환 타입을 간결하게 표현할 수 있습니다.
+    
+- **2) 사용 예제**
+    - **Func 예제**
+    
+    ```csharp
+    // Func를 사용하여 두 개의 정수를 더하는 메서드
+    int Add(int x, int y)
+    {
+        return x + y;
+    }
+    
+    // Func를 이용한 메서드 호출
+    Func<int, int, int> addFunc = Add;
+    int result = addFunc(3, 5);
+    Console.WriteLine("결과: " + result);
+    ```
+
+- **Action 예제**
+
+```csharp
+// Action을 사용하여 문자열을 출력하는 메서드
+void PrintMessage(string message)
+{
+    Console.WriteLine(message);
+}
+
+// Action을 이용한 메서드 호출
+Action<string> printAction = PrintMessage;
+printAction("Hello, World!");
 ```
+
+- **활용 예제**
+
+```csharp
+// 게임 캐릭터 클래스
+class GameCharacter
+{
+    private Action<float> healthChangedCallback;
+
+    private float health;
+
+    public float Health
+    {
+        get { return health; }
+        set
+        {
+            health = value;
+            healthChangedCallback?.Invoke(health);
+        }
+    }
+
+    public void SetHealthChangedCallback(Action<float> callback)
+    {
+        healthChangedCallback = callback;
+    }
+}
+
+// 게임 캐릭터 생성 및 상태 변경 감지
+GameCharacter character = new GameCharacter();
+character.SetHealthChangedCallback(health =>
+{
+    if (health <= 0)
+    {
+        Console.WriteLine("캐릭터 사망!");
+    }
+});
+
+// 캐릭터의 체력 변경
+character.Health = 0;
+```
+
+[04. LINQ (Language Integrated Query)]
+
+- **1) LINQ란?**
+    - .NET 프레임워크에서 제공되는 쿼리 언어 확장
+    - 데이터 소스(예: 컬렉션, 데이터베이스, XML 문서 등)에서 데이터를 쿼리하고 조작하는데 사용됩니다.
+    - 데이터베이스 쿼리와 유사한 방식으로 데이터를 필터링, 정렬, 그룹화, 조인 등 다양한 작업을 수행할 수 있습니다.
+    - LINQ는 객체, 데이터베이스, XML 문서 등 다양한 데이터 소스를 지원합니다.
+    
+- **2) 구조**
+    
+    ```csharp
+    var result = from 변수 in 데이터소스
+                 [where 조건식]
+                 [orderby 정렬식 [, 정렬식...]]
+                 [select 식];
+    
+    ```
+    
+    - **`var`** 키워드는 결과 값의 자료형을 자동으로 추론합니다.
+    - **`from`** 절에서는 데이터 소스를 지정합니다.
+    - **`where`** 절은 선택적으로 사용하며, 조건식을 지정하여 데이터를 필터링합니다.
+    - **`orderby`** 절은 선택적으로 사용하며, 정렬 방식을 지정합니다.
+    - **`select`** 절은 선택적으로 사용하며, 조회할 데이터를 지정합니다.
+- **3) 간단한 예제**
+    
+    ```csharp
+    // 데이터 소스 정의 (컬렉션)
+    List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+    
+    // 쿼리 작성 (선언적인 구문)
+    var evenNumbers = from num in numbers
+                      where num % 2 == 0
+                      select num;
+    
+    // 쿼리 실행 및 결과 처리
+    foreach (var num in evenNumbers)
+    {
+        Console.WriteLine(num);
+    }
+    ```
