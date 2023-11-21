@@ -26,3 +26,4 @@ C:\Users\user.JY-20191120CDZA\Desktop\CSharp\CSharpStudy\obj\Debug\net6.0\refint
 C:\Users\user.JY-20191120CDZA\Desktop\CSharp\CSharpStudy\obj\Debug\net6.0\CSharpStudy.pdb
 C:\Users\user.JY-20191120CDZA\Desktop\CSharp\CSharpStudy\obj\Debug\net6.0\CSharpStudy.genruntimeconfig.cache
 C:\Users\user.JY-20191120CDZA\Desktop\CSharp\CSharpStudy\obj\Debug\net6.0\ref\CSharpStudy.dll
+C:\Users\user.JY-20191120CDZA\Desktop\CSharp\CSharpStudy\obj\Debug\net6.0\CSharpStudy.sourcelink.json
